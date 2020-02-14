@@ -1,0 +1,80 @@
+[
+  {
+    "label": "Testimonials",
+    "name": "testimonial_slider",
+    "type": "group",
+    "occurrence": { "min": 1, "max": null },
+    "children": [
+      {
+        "name": "content",
+        "label": "Testimonial text",
+        "required": true,
+        "type": "text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+      },
+      {
+        "name": "author",
+        "label": "Author",
+        "type": "group",
+        "children": [
+          {
+            "name": "author_name",
+            "label": "Author's name",
+            "required": false,
+            "type": "text",
+            "default": "Lori Hahn"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "style",
+    "name": "style",
+    "label": "Style options",
+    "type": "group",
+    "children": [
+      {
+        "id": "style.override_default_style",
+        "name": "override_default_style",
+        "label": "Override default style",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "style.navigation_color",
+        "name": "navigation_color",
+        "label": "Navigation color",
+        "visibility": {
+          "controlling_field": "style.override_default_style",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL",
+          "access": null,
+          "hidden_subfields": null
+        },
+        "type": "color",
+        "default": {
+          "color": "#D2D8DF",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "style.navigation_active_color",
+        "name": "navigation_active_color",
+        "label": "Navigation active color",
+        "visibility": {
+          "controlling_field": "style.override_default_style",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL",
+          "access": null,
+          "hidden_subfields": null
+        },
+        "type": "color",
+        "default": {
+          "color": "#E73335",
+          "opacity": 100
+        }
+      }
+    ]
+  }
+]

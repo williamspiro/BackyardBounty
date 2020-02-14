@@ -1,0 +1,14 @@
+{
+  "label": "Main Menu",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "icon": "https://cdn2.hubspot.net/hubfs/6959603/menu-section.svg",
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": false,
+  "module_id": 24136974843
+}

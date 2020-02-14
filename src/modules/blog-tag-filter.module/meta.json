@@ -1,0 +1,14 @@
+{
+  "label": "Blog Tag Filter",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "host_template_types": ["BLOG_LISTING", "BLOG_POST"],
+  "icon": "https://cdn2.hubspot.net/hubfs/6959603/blog-tag-filter.svg",
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true,
+  "module_id": 24133501495
+}

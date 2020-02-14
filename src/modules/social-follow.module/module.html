@@ -1,0 +1,28 @@
+<div class="social-links" id="social-links--{{ name }}">
+  {% for item in module.social_links %}
+    {% set href = item.social_link.url.href %}
+    {% if item.social_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+    <a href="{{ href }}"
+       class="social-links__icon"
+       {% if item.social_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.social_link.no_follow %}rel="nofollow"{% endif %}
+    >
+      {% icon name={{ item.social_account }}, style="solid" %}
+    </a>
+  {% endfor %}
+</div>
+
+{% if module.style.override_default_style %}
+  {% require_css %}
+    <style>
+      #social-links--{{ name }} .social-links__icon svg {
+        fill: rgba({{ module.style.icon_color.color|convert_rgb }},{{ module.style.icon_color.opacity * 0.01 }});
+      }
+      #social-links--{{ name }} .social-links__icon:hover svg {
+        fill: rgba({{ module.style.icon_hover_color.color|convert_rgb }},{{ module.style.icon_hover_color.opacity * 0.01 }});
+      }
+    </style>
+  {% end_require_css %}
+{% endif %}

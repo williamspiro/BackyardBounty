@@ -1,0 +1,15 @@
+<!--
+  templateType: email_backup_unsubscribe_page
+  isAvailableForNewContent: true
+  label: Vitality - Backup Unsubscribe
+  screenshotPath: ../../images/templates/vitality_unsubscribe.jpg
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="content-wrapper">
+  <div class="systems-page">
+    {% module "backup_unsubscribe" path="@hubspot/email_simple_subscription" %}
+  </div>
+</div>
+{% endblock body %}

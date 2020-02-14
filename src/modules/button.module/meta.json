@@ -1,0 +1,14 @@
+{
+  "label": "Button",
+  "css_assets": [],
+  "external_js": [],
+  "global": false,
+  "host_template_types": ["PAGE", "BLOG_LISTING", "BLOG_POST"],
+  "icon": "https://cdn2.hubspot.net/hubfs/6959603/button.svg",
+  "js_assets": [],
+  "other_assets": [],
+  "smart_type": "NOT_SMART",
+  "tags": [],
+  "is_available_for_new_content": true,
+  "module_id": 24136373578
+}

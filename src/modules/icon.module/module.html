@@ -1,0 +1,20 @@
+<div class="icon" id="icon--{{ name }}">
+  {% icon
+    name="{{ module.icon_type.name }}"
+    style="{{ module.icon_type.type }}"
+    unicode="{{ module.icon_type.unicode }}"
+  %}
+</div>
+
+{% if module.style.override_default_style %}
+  {% require_css %}
+    <style>
+      #icon--{{ name }} svg {
+        fill: rgba({{ module.style.icon_color.color|convert_rgb }},{{ module.style.icon_color.opacity * 0.01 }});
+      }
+      #icon--{{ name }} svg {
+        width: {{ module.style.icon_size }}px;
+      }
+    </style>
+  {% end_require_css %}
+{% endif %}

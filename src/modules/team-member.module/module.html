@@ -1,0 +1,18 @@
+<section class="team-member" id="team-member--{{ name }}">
+  <img class="team-member__image" src="{{ module.team_member_image.src }}" alt="{{ module.team_member_image.alt }}">
+  <div class="team-member__description">
+    <h3 class="team-member__name">{{ module.team_member_name }}</h3>
+    <p class="team-member__position">{{ module.team_member_position }}</p>
+    <div class="team-member__bio">{{ module.team_member_bio }}</div>
+  </div>
+</section>
+
+{% if module.style.override_default_style %}
+  {% require_css %}
+    <style>
+      #team-member--{{ name }} .team-member__description {
+        background-color: rgba({{ module.style.background_color.color|convert_rgb }},{{ module.style.background_color.opacity * 0.01 }});
+      }
+    </style>
+  {% end_require_css %}
+{% endif %}
