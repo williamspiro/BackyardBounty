@@ -15,8 +15,8 @@ jobs:
     - name: Install NPM deps
       run: |
           npm install
-    - name: Make gradlew
-      run: chmod +x ./gradlew
+    - name: Make bin executable
+      run: chmod +x /bin
     - name: Generate hubspot.config.yml and deploy
       env:
         HUBSPOT_PORTAL_ID: 7158654
