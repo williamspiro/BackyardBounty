@@ -5,12 +5,12 @@ const fs = require('fs');
 const yaml = require('js-yaml');
 
 const portalId = process.env.HUBSPOT_PORTAL_ID;
-const userToken = process.env.HUBSPOT_USER_TOKEN;
+const apiKey = process.env.HUBSPOT_API_KEY;
 
 const portalConfig = {
   name: 'PROD',
   portalId,
-  userToken,
+  apiKey,
 };
 
 const config = {
