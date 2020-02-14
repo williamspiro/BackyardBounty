@@ -1,0 +1,26 @@
+.team-member {
+  margin-bottom: 1.4rem;
+}
+
+.team-member__image {
+  display: block;
+  margin: 0 auto;
+}
+
+.team-member__description {
+  margin-top: -4.2em;
+  padding: 5.6rem 1.4rem 1.4rem;
+}
+
+.team-member__name {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.38rem;
+  margin-bottom: 0.7rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.team-member__position {
+  font-size: 0.9rem;
+}

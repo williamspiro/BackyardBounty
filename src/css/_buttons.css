@@ -1,0 +1,51 @@
+.hs-button,
+.button--primary {
+  border-style: solid;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.38rem;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+.hs-button:hover,
+.hs-button:focus,
+.hs-button:active,
+.button--primary:hover,
+.button--primary:focus,
+.button--primary:active,
+.button--secondary:hover,
+.button--secondary:focus,
+.button--secondary:active {
+  text-decoration: none;
+}
+
+.button--secondary {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.38rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.button--secondary:after {
+    bottom: -3px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.button--secondary:hover:after,
+.button--secondary:focus:after,
+.button--secondary:active:after {
+  content: none;
+}

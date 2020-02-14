@@ -1,0 +1,59 @@
+{% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+  {% set href = "mailto:" ~ module.button_link.url.href %}
+{% else %}
+  {% unless (module.button_link.url.href is string_containing "//") or !module.button_link.url.href %}
+    {% set href = "//" ~ module.button_link.url.href %}
+  {% else %}
+    {% set href = module.button_link.url.href || "" %}
+  {% endunless %}
+{% endif %}
+
+{% set rel = (module.button_link.open_in_new_tab ? "noopener " : null) ~ (module.button_link.no_follow ? "nofollow" : null) %}
+<a class="button button--{{ module.style_type }}" href="{{ href }}"
+    id="button_{{ name }}"
+    {% if module.button_link.open_in_new_tab %}target="_blank"{% endif %}
+    rel="{{ rel }}">
+  {{ module.button_text }}
+</a>
+
+{% if module.style_options.override_default_style %}
+  {% require_css %}
+    <style>
+      {% if module.style_type == "primary" %}
+        #button_{{ name }} {
+          background-color: rgba({{ module.style_options.styles.primary_background_color.color|convert_rgb }}, {{ module.style_options.styles.primary_background_color.opacity * 0.01 }});
+          border-color: rgba({{ module.style_options.styles.primary_border_color.color|convert_rgb }}, {{ module.style_options.styles.primary_border_color.opacity * 0.01 }});
+          border-radius: {{ module.style_options.styles.primary_corner_radius }}px;
+          border-width: {{ module.style_options.styles.primary_border_width }}px;
+          color: rgba({{ module.style_options.styles.primary_text_color.color|convert_rgb }},{{ module.style_options.styles.primary_text_color.opacity * 0.01 }});
+          padding-left: {{ module.style_options.styles.primary_horizontal_padding }}px;
+          padding-right: {{ module.style_options.styles.primary_horizontal_padding }}px;
+          padding-top: {{ module.style_options.styles.primary_vertical_padding }}px;
+          padding-bottom: {{ module.style_options.styles.primary_vertical_padding }}px;
+        }
+        #button_{{ name }}:hover,
+        #button_{{ name }}:focus {
+          background-color: rgba({{ color_variant(module.style_options.styles.primary_background_color.color, -40)|convert_rgb }}, {{ module.style_options.styles.primary_background_color.opacity * 0.01 }});
+          border-color: rgba({{ color_variant(module.style_options.styles.primary_border_color.color, -40)|convert_rgb }}, {{ module.style_options.styles.primary_border_color.opacity * 0.01 }});
+        }
+        #button_{{ name }}:active {
+          background-color: rgba({{ color_variant(module.style_options.styles.primary_background_color.color, 40)|convert_rgb }}, {{ module.style_options.styles.primary_background_color.opacity * 0.01 }});
+          border-color: rgba({{ color_variant(module.style_options.styles.primary_border_color.color, 40)|convert_rgb }}, {{ module.style_options.styles.primary_border_color.opacity * 0.01 }});
+        }
+      {% elif module.style_type == "secondary" %}
+        #button_{{ name }} {
+          color: rgba({{ module.style_options.styles.secondary_text_color.color|convert_rgb }},{{ module.style_options.styles.secondary_text_color.opacity * 0.01 }});
+        }
+        #button_{{ name }}:hover,
+        #button_{{ name }}:focus,
+        #button_{{ name }}:active {
+          color: rgba({{ module.style_options.styles.secondary_text_hover_color.color|convert_rgb }}, {{ module.style_options.styles.secondary_text_hover_color.opacity * 0.01 }});
+        }
+        #button_{{ name }}:after {
+          background-color: rgba({{ module.style_options.styles.secondary_underline_color.color|convert_rgb }}, {{ module.style_options.styles.secondary_underline_color.opacity * 0.01 }});
+        }
+      {% endif %}
+    </style>
+  {% end_require_css %}
+{% endif %}
+

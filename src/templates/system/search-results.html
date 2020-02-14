@@ -1,0 +1,16 @@
+<!--
+  templateType: search_results_page
+  isAvailableForNewContent: true
+  label: Vitality - Search Results
+  screenshotPath: ../../images/templates/vitality_search-results.jpg
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="content-wrapper">
+  <div class="systems-page">
+    <h1>Results for "{{ request.query_dict.term|escape }}"</h1>
+    {% module "search_results" path="@hubspot/search_results" %}
+  </div>
+</div>
+{% endblock body %}

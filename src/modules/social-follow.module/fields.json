@@ -1,0 +1,126 @@
+[
+  {
+    "id": "social_links",
+    "name": "social_links",
+    "label": "Social links",
+    "children": [
+      {
+        "id": "social_links.social_account",
+        "name": "social_account",
+        "label": "Social account",
+        "required": true,
+        "choices": [
+          ["facebook-f", "Facebook"],
+          ["twitter", "Twitter"],
+          ["linkedin-in", "Linkedin"],
+          ["instagram", "Instagram"]
+        ],
+        "display": "select",
+        "type": "choice",
+        "default": "facebook-f"
+      },
+      {
+        "id": "social_links.social_link",
+        "name": "link",
+        "label": "Link",
+        "required": true,
+        "supported_types": ["EXTERNAL", "EMAIL_ADDRESS"],
+        "type": "link",
+        "default": {
+          "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      }
+    ],
+    "default": [
+      {
+        "social_account": "facebook-f",
+        "link": {
+          "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "social_account": "instagram",
+        "link": {
+          "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "social_account": "twitter",
+        "link": {
+          "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      },
+      {
+        "social_account": "linkedin-in",
+        "link": {
+          "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
+          "open_in_new_tab": true,
+          "no_follow": false
+        }
+      }
+    ],
+    "type": "group",
+    "occurrence": {
+      "default": 4,
+      "min": 1,
+      "max" : 4
+    }
+  },
+  {
+    "id": "style",
+    "name": "style",
+    "label": "Style options",
+    "type": "group",
+    "children": [
+      {
+        "id": "style.override_default_style",
+        "name": "override_default_style",
+        "label": "Override default style",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "id": "style.icon_color",
+        "name": "icon_color",
+        "label": "Icon color",
+        "visibility": {
+          "controlling_field": "style.override_default_style",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL",
+          "access": null,
+          "hidden_subfields": null
+        },
+        "type": "color",
+        "default": {
+          "color": "#E73335",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "style.icon_hover_color",
+        "name": "icon_hover_color",
+        "label": "Icon hover color",
+        "visibility": {
+          "controlling_field": "style.override_default_style",
+          "controlling_value_regex": "true",
+          "operator": "EQUAL",
+          "access": null,
+          "hidden_subfields": null
+        },
+        "type": "color",
+        "default": {
+          "color": "#BF0B0D",
+          "opacity": 100
+        }
+      }
+    ]
+  }
+]

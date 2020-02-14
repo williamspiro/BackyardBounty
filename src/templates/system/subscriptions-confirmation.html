@@ -1,0 +1,15 @@
+<!--
+  templateType: email_subscriptions_confirmation_page
+  isAvailableForNewContent: true
+  label: Vitality - Subscription Confirmation
+  screenshotPath: ../../images/templates/vitality_subscriptions-preferences.jpg
+-->
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<div class="content-wrapper">
+  <div class="systems-page">
+    {% module "subscriptions_confirmation" path="@hubspot/email_subscriptions_confirmation" %}
+  </div>
+</div>
+{% endblock body %}
