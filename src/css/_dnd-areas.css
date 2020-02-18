@@ -13,13 +13,12 @@
   padding-right: 20px;
 }
 
-[class*="background-image"].dnd-section {
-    background-attachment: fixed;
-}
-
 @media (max-width: 767px) {
   .dnd-section .widget-type-cell {
     padding-left: 0;
     padding-right: 0;
+  }
+  [class*="background-image"].dnd-section {
+    background-attachment: fixed;
   }
 }
