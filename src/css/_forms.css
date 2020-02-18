@@ -21,6 +21,8 @@ h3.form-title {
 
 form .hs-button {
   width: 100%;
+  line-height: 1.4;
+  white-space: normal;
 }
 
 /* Form Labels */
