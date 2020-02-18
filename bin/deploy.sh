@@ -1,2 +1,2 @@
 #!/bin/bash
-npx hs upload src LetsTacoBoutFitness
+npx hs upload src BackyardBounty
