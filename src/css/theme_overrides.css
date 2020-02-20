@@ -142,7 +142,7 @@ blockquote {
 {###############################   _forms    ###############################}
 {###########################################################################}
 
-form {
+form, .submitted-message {
   background-color: rgba({{ theme.forms_group.forms.background_color.color|convert_rgb }}, {{ theme.forms_group.forms.background_color.opacity * 0.01 }});
   border-color: rgba({{ theme.forms_group.forms.border_color.color|convert_rgb }}, {{ theme.forms_group.forms.border_color.opacity * 0.01 }}) ;
   font-family: {{ theme.typography_group.typography.body_text.font }};
